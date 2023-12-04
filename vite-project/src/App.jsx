@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import RestaurantList from './RestaurantList';
+import RestaurantSearch from './RestaurantSearch';
 
 function App() {
   const [results, setResults] = useState([]);
@@ -39,8 +40,8 @@ function App() {
 
   return (
     
-      <div>
-      
+      <div className='background'>
+          <RestaurantSearch/>
               {results ? (
           <>
             <RestaurantList results={results} />

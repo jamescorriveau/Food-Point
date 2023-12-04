@@ -76,3 +76,12 @@ strong {
 strong:hover {
   text-decoration: underline;
 }
+
+.background {
+  background-image: url("https://images.pexels.com/photos/175753/pexels-photo-175753.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: auto;
+  min-height: 100vh;
+  min-width: 100vw;
+}
