@@ -10,18 +10,9 @@ const RestaurantSearch = ({ restaurants, onSearch, searchTerm}) => {
   };
 
   const handleSearch = () => {
-    console.log("restaurants")
-    console.log(restaurants)
-    const filtered =
-      searchTerm.length > 0
-        ? restaurants.filter((restaurant) =>
-            restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
-          )
-        : restaurants;
-
+  
     setFilteredRestaurants(filtered);
-    onSearch(searchTerm)
-
+    onSearch(searchTerm);
   };
 
   return (

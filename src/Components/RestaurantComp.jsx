@@ -1,18 +1,69 @@
 import React, { useState, useEffect } from "react";
 
-function RestaurantComp({name, description, address, city, rating, review_count, open_state, types, hours, website, price_level, photos}) {
+function RestaurantComp({ name, description, address, city, rating, review_count, open_state, types, hours, website, price_level, photos, restaurants, url }) {
+  const [isShowingHours, setShowingHours] = useState(false);
+  const [isFavorite, setFavorite] = useState(false);
+  const [favoritesList, setFavoritesList] = useState([]);
 
-    const [isShowingHours, setShowingHours] = useState(false)
+  useEffect(() => {
+    console.log("logging faves now");
+    console.log(favoritesList);
+  }, [favoritesList]);
 
-    const [isFavorite, setFavorite] = useState(true)
+  function handleShowHours() {
+    setShowingHours(!isShowingHours);
+  }
 
-    function handleShowHours() {
-        setShowingHours(!isShowingHours)
-    }
+  function handleFavoriteTrue() {
+    handleFavorite() 
 
-    function handleFavorite() {
-        setFavorite(!isFavorite)
-    }
+    const favoriteRestaurant = {
+            name,
+            description,
+            address,
+            city,
+            rating,
+            review_count,
+            open_state,
+            types,
+            hours,
+            website,
+            price_level,
+            photos,
+          };
+      
+          console.log('favorite restaurant!')
+          console.log(favoriteRestaurant)
+    
+      addToFaves(favoriteRestaurant);
+  }``
+
+  function handleFavorite() {
+    setFavorite(!isFavorite)
+   
+  }
+
+  function addToFaves(newFave) {
+    // Update the favoritesList state
+    setFavoritesList((prevFavorites) => [...prevFavorites, newFave]);
+  
+    // Assuming you have a backend endpoint to save the favorites
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        "X-RapidAPI-Key": "3a907745f5msh22b6f4061fe0039p156641jsn530f785f876f",
+        "X-RapidAPI-Host": "maps-data.p.rapidapi.com",
+      },
+      body: JSON.stringify({ favoritesList: favoritesList }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Favorites saved successfully:', data);
+      })
+      .catch((error) => {
+        console.error('Error saving favorites:', error);
+      });
+  }
 
     const stars = [];
 
@@ -94,6 +145,9 @@ function RestaurantComp({name, description, address, city, rating, review_count,
       };
 
       const openState = getOpenState();
+
+
+     
     
      
 
@@ -108,11 +162,13 @@ function RestaurantComp({name, description, address, city, rating, review_count,
           <div id="price">{money}</div>
           <div>
             {isFavorite ?
-            <button onClick={handleFavorite}>Add to Favorites ☆</button>
-            : <button onClick={handleFavorite} style={{ backgroundColor: '#b2ebc1' }}>Added to Favorites ★</button>
+            <button onClick={handleFavoriteTrue} style={{ backgroundColor: '#b2ebc1' }}>Added to Favorites ★</button>
+            : <button onClick={handleFavorite} >Add to Favorites ☆</button>
             }
           </div>
         </div>
+
+       
 
         {/* {isShowingHours ? <div onClick={handleShowHours}><strong>Hours ▲</strong></div>
         : <div onClick={handleShowHours}><strong>Hours ▼</strong></div>

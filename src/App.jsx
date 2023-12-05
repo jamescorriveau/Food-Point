@@ -9,9 +9,10 @@ function App() {
   const [errors, setErrors] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    const url =
+  const url =
       "https://maps-data.p.rapidapi.com/searchmaps.php?query=restaurant&limit=20&country=us&lang=en&lat=40.7128&lng=-74.006&offset=0&zoom=13";
+
+  useEffect(() => {
     const options = {
       method: "GET",
       headers: {
@@ -39,7 +40,19 @@ function onSearch(term) {
 }
 
 
-const filteredResults = results.filter((result) =>  result.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+const filteredResults = results.filter((result) => {
+  const lowerCaseName = (result.name || '').toLowerCase();
+  const lowerCaseDescription0 = (result.description[0] || '').toLowerCase();
+  const lowerCaseDescription1 = (result.description[1] || '').toLowerCase();
+  const lowerCaseSearchTerm = searchTerm.toLowerCase();
+
+  return (
+    lowerCaseName.includes(lowerCaseSearchTerm) ||
+    lowerCaseDescription0.includes(lowerCaseSearchTerm) ||
+    lowerCaseDescription1.includes(lowerCaseSearchTerm)
+  );
+});
 
 
   return (
@@ -47,7 +60,7 @@ const filteredResults = results.filter((result) =>  result.name.toLowerCase().in
       <Header />
       <RestaurantSearch restaurants={filteredResults} onSearch={onSearch} searchTerm={searchTerm}/>
       {results.length > 0 ? (
-        <RestaurantList results={filteredResults}/>
+        <RestaurantList results={filteredResults} url={url}/>
       ) : (
         <p>Loading...</p>
       )}
