@@ -4,8 +4,14 @@ function RestaurantComp({name, description, address, city, rating, review_count,
 
     const [isShowingHours, setShowingHours] = useState(false)
 
+    const [isFavorite, setFavorite] = useState(true)
+
     function handleShowHours() {
         setShowingHours(!isShowingHours)
+    }
+
+    function handleFavorite() {
+        setFavorite(!isFavorite)
     }
 
     const stars = [];
@@ -16,7 +22,7 @@ function RestaurantComp({name, description, address, city, rating, review_count,
     // Check if there's a fractional part
     let partialStar = rating % 1;
     partialStar = Math.round(partialStar * 10) / 10;
-    console.log(partialStar);
+   
 
     // Add full stars
     for (let i = 0; i < fullStars; i++) {
@@ -69,6 +75,12 @@ function RestaurantComp({name, description, address, city, rating, review_count,
           <div className="rating">{rating} {stars}</div>
           <div id="open" style={{ color: openStateColor }}>{open_state}</div>
           <div id="price">{money}</div>
+          <div>
+            {isFavorite ?
+            <button onClick={handleFavorite}>Add to Favorites ☆</button>
+            : <button onClick={handleFavorite} style={{ backgroundColor: '#b2ebc1' }}>Added to Favorites ★</button>
+            }
+          </div>
         </div>
 
         {/* {isShowingHours ? <div onClick={handleShowHours}><strong>Hours ▲</strong></div>

@@ -6,7 +6,7 @@ body {
 }
 
 .restaurantContainer {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   padding: 0 5%; /* Adjust padding for the desired buffer */
   width: 100%;
 }
@@ -17,11 +17,12 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  margin-bottom: 15px; /* Add margin between cards */
+  margin-bottom: 2%; /* Add margin between cards */
   width: calc(100% - 30px); /* Calculate width to consider padding and margin */
   
   margin-left: auto; /* Center the card within the container */
   margin-right: auto;
+  background-color: white;
 }
 
 .restaurantCard:hover {
