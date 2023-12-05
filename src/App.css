@@ -15,7 +15,6 @@ body {
   min-height: 100vh;
   min-width: 100vw;
 }
-
  
 
 .restaurantContainer {
@@ -116,6 +115,8 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+}
+
 .background {
   background-image: url("https://images.pexels.com/photos/175753/pexels-photo-175753.jpeg?auto=compress&cs=tinysrgb&w=1200");
   background-size: cover;

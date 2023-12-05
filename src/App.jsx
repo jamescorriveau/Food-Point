@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import RestaurantList from "./RestaurantList";
-import RestaurantSearch from "./RestaurantSearch";
+import RestaurantList from "./Components/RestaurantList";
+import RestaurantSearch from "./Components/RestaurantSearch";
 import Header from "./Header";
 
 function App() {
