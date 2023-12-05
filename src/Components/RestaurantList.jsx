@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import RestaurantComp from './RestaurantComp';
 
-function RestaurantList({ results}) {
+function RestaurantList({ results, filteredResults}) {
+    let restaurants;
+
+    
+    console.log(results)
+
     
 
 
-    console.log(results)
-
-
-    let restaurants = results.map((result) => (
+     restaurants = results.map((result) => (
               <RestaurantComp 
                   key={result.business_id}
                   name={result.name}

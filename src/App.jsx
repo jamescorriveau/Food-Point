@@ -5,8 +5,9 @@ import RestaurantSearch from "./Components/RestaurantSearch";
 import Header from "./Header";
 
 function App() {
-  const [results, setResults] = useState([]);
+  let [results, setResults] = useState([]);
   const [errors, setErrors] = useState({});
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const url =
@@ -25,6 +26,7 @@ function App() {
       if (res.status === 200) {
         res.json().then((data) => {
           setResults(data.data);
+          console.log(results)
         });
       } else {
         res.json().then((err) => setErrors(err));
@@ -32,12 +34,20 @@ function App() {
     });
   }, []);
 
+function onSearch(term) {
+  setSearchTerm(term);
+}
+
+
+const filteredResults = results.filter((result) =>  result.name.toLowerCase().includes(searchTerm.toLowerCase()));
+
+
   return (
     <div className="background">
       <Header />
-      <RestaurantSearch restaurants={results} />
+      <RestaurantSearch restaurants={filteredResults} onSearch={onSearch} searchTerm={searchTerm}/>
       {results.length > 0 ? (
-        <RestaurantList results={results} />
+        <RestaurantList results={filteredResults}/>
       ) : (
         <p>Loading...</p>
       )}

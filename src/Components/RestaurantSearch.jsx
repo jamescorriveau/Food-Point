@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 // import "./App.css";
 
-const RestaurantSearch = ({ restaurants }) => {
-  const [searchInput, setSearchInput] = useState("");
+const RestaurantSearch = ({ restaurants, onSearch, searchTerm}) => {
+  
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
 
   const handleChange = (e) => {
-    setSearchInput(e.target.value);
+    onSearch(e.target.value);
   };
 
   const handleSearch = () => {
+    console.log("restaurants")
+    console.log(restaurants)
     const filtered =
-      searchInput.length > 0
+      searchTerm.length > 0
         ? restaurants.filter((restaurant) =>
-            restaurant.name.toLowerCase().includes(searchInput.toLowerCase())
+            restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
           )
         : restaurants;
 
     setFilteredRestaurants(filtered);
+    onSearch(searchTerm)
+
   };
 
   return (
@@ -25,9 +29,10 @@ const RestaurantSearch = ({ restaurants }) => {
       <input
         type="search"
         placeholder="Search here"
-        onChange={handleChange}
-        value={searchInput}
+        value={searchTerm}
         className="search-restaurant"
+        onChange={handleChange}
+        // onChange={(e) => onSearch(e.target.value)}
       />
       <button onClick={handleSearch}>Search</button>
 
