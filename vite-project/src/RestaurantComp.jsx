@@ -22,6 +22,7 @@ function RestaurantComp({name, description, address, city, rating, review_count,
     // Check if there's a fractional part
     let partialStar = rating % 1;
     partialStar = Math.round(partialStar * 10) / 10;
+
    
 
     // Add full stars
@@ -42,15 +43,33 @@ function RestaurantComp({name, description, address, city, rating, review_count,
         stars.push('🌖'); 
     }
 
+    if (rating === 4) {
+        rating = rating.toFixed(1); // Convert to a string with one decimal place
+        stars.push('🌑');
+    }
+
+    if (rating < 4 & rating > 3) {
+        stars.push('🌑');
+    }
+
+    
+
+    if (!stars || stars.length === 0) {
+        // Check if stars is undefined or empty
+        stars.push(" No Rating "); // Push five empty spaces into the array
+    }
+
     let money;
     
-        if (price_level === "$$$") {
-            money = "💰💰💰"
-        } else if (price_level === "$$"){
-            money = "💰💰"
-        } else if (price_level === "$$") {
-            money = "💰"
-        }
+    if (price_level === "$$$") {
+        money = "💰💰💰";
+    } else if (price_level === "$$") {
+        money = "💰💰  ";
+    } else if (price_level === "$") {
+        money = "💰   ";
+    } else {
+        money = "   ";
+    }
 
 
 
@@ -63,8 +82,20 @@ function RestaurantComp({name, description, address, city, rating, review_count,
           return "black"; // Default color if neither "open" nor "closed"
         }
       };
-    
+
       const openStateColor = getOpenStateColor();
+
+      const getOpenState = () => {
+        if (open_state.toLowerCase().includes("open")) {
+          return "Open";
+        } else if (open_state.toLowerCase().includes("closed")) {
+          return "Closed";
+        } 
+      };
+
+      const openState = getOpenState();
+    
+     
 
    return(
     <div className="restaurantContainer">
@@ -73,7 +104,7 @@ function RestaurantComp({name, description, address, city, rating, review_count,
 
         <div className="infoRow">
           <div className="rating">{rating} {stars}</div>
-          <div id="open" style={{ color: openStateColor }}>{open_state}</div>
+          <div id="open" style={{ color: openStateColor }}>{openState}</div>
           <div id="price">{money}</div>
           <div>
             {isFavorite ?
