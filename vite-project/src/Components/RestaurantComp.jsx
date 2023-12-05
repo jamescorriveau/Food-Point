@@ -56,7 +56,7 @@ function RestaurantComp({name, description, address, city, rating, review_count,
 
     if (!stars || stars.length === 0) {
         // Check if stars is undefined or empty
-        stars.push(" No Rating "); // Push five empty spaces into the array
+        stars.push("  No Rating  "); // Push five empty spaces into the array
     }
 
     let money;
