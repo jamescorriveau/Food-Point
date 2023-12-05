@@ -1,88 +1,117 @@
 import React, { useState, useEffect } from "react";
 
-function RestaurantComp({
-  name,
-  description,
-  address,
-  city,
-  rating,
-  review_count,
-  open_state,
-  types,
-  hours,
-  website,
-  price_level,
-  photos,
-}) {
-  const [isShowingHours, setShowingHours] = useState(false);
+function RestaurantComp({name, description, address, city, rating, review_count, open_state, types, hours, website, price_level, photos}) {
 
-  function handleShowHours() {
-    setShowingHours(!isShowingHours);
-  }
+    const [isShowingHours, setShowingHours] = useState(false)
 
-  const stars = [];
+    const [isFavorite, setFavorite] = useState(true)
 
-  // Calculate the number of full stars
-  const fullStars = Math.floor(rating);
-
-  // Check if there's a fractional part
-  let partialStar = rating % 1;
-  partialStar = Math.round(partialStar * 10) / 10;
-  console.log(partialStar);
-
-  // Add full stars
-  for (let i = 0; i < fullStars; i++) {
-    stars.push("🌕");
-  }
-
-  // Add a partial star if necessary
-  if (partialStar === 0.1 || partialStar === 0.2 || partialStar === 0.3) {
-    stars.push("🌘");
-  }
-
-  if (partialStar === 0.4 || partialStar === 0.5 || partialStar === 0.6) {
-    stars.push("🌗");
-  }
-
-  if (partialStar === 0.7 || partialStar === 0.8 || partialStar === 0.9) {
-    stars.push("🌖");
-  }
-
-  let money;
-
-  if (price_level === "$$$") {
-    money = "💰💰💰";
-  } else if (price_level === "$$") {
-    money = "💰💰";
-  } else if (price_level === "$$") {
-    money = "💰";
-  }
-
-  const getOpenStateColor = () => {
-    if (open_state.toLowerCase().includes("open")) {
-      return "green";
-    } else if (open_state.toLowerCase().includes("closed")) {
-      return "red";
-    } else {
-      return "black"; // Default color if neither "open" nor "closed"
+    function handleShowHours() {
+        setShowingHours(!isShowingHours)
     }
-  };
 
-  const openStateColor = getOpenStateColor();
+    function handleFavorite() {
+        setFavorite(!isFavorite)
+    }
 
-  return (
+    const stars = [];
+
+    // Calculate the number of full stars
+    const fullStars = Math.floor(rating);
+
+    // Check if there's a fractional part
+    let partialStar = rating % 1;
+    partialStar = Math.round(partialStar * 10) / 10;
+
+   
+
+    // Add full stars
+    for (let i = 0; i < fullStars; i++) {
+        stars.push('🌕');
+    }
+
+    // Add a partial star if necessary
+    if (partialStar===0.1 || partialStar===0.2 || partialStar===0.3) {
+        stars.push('🌘');
+    }
+
+    if (partialStar===0.4 || partialStar===0.5 || partialStar===0.6) {
+        stars.push('🌗'); 
+    }
+
+    if (partialStar===0.7 || partialStar===0.8 || partialStar===0.9) {
+        stars.push('🌖'); 
+    }
+
+    if (rating === 4) {
+        rating = rating.toFixed(1); // Convert to a string with one decimal place
+        stars.push('🌑');
+    }
+
+    if (rating < 4 & rating > 3) {
+        stars.push('🌑');
+    }
+
+    
+
+    if (!stars || stars.length === 0) {
+        // Check if stars is undefined or empty
+        stars.push("  No Rating  "); // Push five empty spaces into the array
+    }
+
+    let money;
+    
+    if (price_level === "$$$") {
+        money = "💰💰💰";
+    } else if (price_level === "$$") {
+        money = "💰💰  ";
+    } else if (price_level === "$") {
+        money = "💰   ";
+    } else {
+        money = "   ";
+    }
+
+
+
+    const getOpenStateColor = () => {
+        if (open_state.toLowerCase().includes("open")) {
+          return "green";
+        } else if (open_state.toLowerCase().includes("closed")) {
+          return "red";
+        } else {
+          return "black"; // Default color if neither "open" nor "closed"
+        }
+      };
+
+      const openStateColor = getOpenStateColor();
+
+      const getOpenState = () => {
+        if (open_state.toLowerCase().includes("open")) {
+          return "Open";
+        } else if (open_state.toLowerCase().includes("closed")) {
+          return "Closed";
+        } 
+      };
+
+      const openState = getOpenState();
+    
+     
+
+   return(
     <div className="restaurantContainer">
       <div className="restaurantCard">
         <h3 className="name">{name}</h3>
 
         <div className="infoRow">
-          <div className="rating">
-            {rating} {stars}
-          </div>
-          <div id="open" style={{ color: openStateColor }}>
-            {open_state}
-          </div>
+          <div className="rating">{rating} {stars}</div>
+          <div id="open" style={{ color: openStateColor }}>{openState}</div>
           <div id="price">{money}</div>
+          <div>
+            {isFavorite ?
+            <button onClick={handleFavorite}>Add to Favorites ☆</button>
+            : <button onClick={handleFavorite} style={{ backgroundColor: '#b2ebc1' }}>Added to Favorites ★</button>
+            }
+          </div>
         </div>
 
         {/* {isShowingHours ? <div onClick={handleShowHours}><strong>Hours ▲</strong></div>
@@ -101,13 +130,15 @@ function RestaurantComp({
         </div> : null
         } */}
 
-        <h4 className="description">{description[0]}</h4>
+        <h4 className="description">
+            {description[0]}
+        </h4>
         {/* <div className="description">
             {description[1]}
         </div> */}
-      </div>
+        </div>
     </div>
-  );
+   )
 }
 
 export default RestaurantComp;
