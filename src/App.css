@@ -96,11 +96,14 @@ strong:hover {
   padding: 10px 20px;
   font-size: 1em;
   height: auto;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .navLinks {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .navLinks a {
@@ -111,7 +114,14 @@ strong:hover {
 }
 
 .navLinks a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .search-restaurant {
@@ -119,7 +129,7 @@ strong:hover {
   font-size: 1em;
   border-radius: 5px;
   border: 1px solid #ccc;
-  /* margin-right: 5px; Reduced margin for closer positioning */
+  margin-right: 5px;
 }
 
 button {
@@ -140,7 +150,7 @@ button {
 }
 
 .header a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .background {
