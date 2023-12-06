@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
   font-family: "Arial", sans-serif;
   color: red;
@@ -15,7 +13,6 @@ body {
   min-height: 100vh;
   min-width: 100vw;
 }
- 
 
 .restaurantContainer {
   /* margin-top: 5%; */
@@ -31,7 +28,7 @@ body {
   transition: transform 0.2s;
   margin-bottom: 2%; /* Add margin between cards */
   width: calc(100% - 30px); /* Calculate width to consider padding and margin */
-  
+
   margin-left: auto; /* Center the card within the container */
   margin-right: auto;
   background-color: white;
@@ -41,9 +38,10 @@ body {
   transform: scale(1.05);
 }
 
-.name , .description{
-  padding:0px;
-  margin:0px;
+.name,
+.description {
+  padding: 0px;
+  margin: 0px;
 }
 
 .rating,
@@ -56,10 +54,8 @@ body {
 .infoRow {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping if the content doesn't fit in one row */
-  justify-content: space-evenly
+  justify-content: space-evenly;
 }
-
-
 
 #open {
   font-weight: bold;
@@ -91,20 +87,39 @@ strong:hover {
 }
 
 .header {
-  position: relative;
-  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(141, 182, 197);
   color: white;
   text-align: center;
-  padding: 10px 0;
-  font-size: 10;
-  height: 80px;
+  padding: 10px 20px;
+  font-size: 1em;
+  height: auto;
 }
+
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.navLinks a:hover {
+  text-decoration: underline;
+}
+
 .search-restaurant {
   padding: 10px;
   font-size: 1em;
   border-radius: 5px;
   border: 1px solid #ccc;
-  margin-right: 10px;
+  /* margin-right: 5px; Reduced margin for closer positioning */
 }
 
 button {
@@ -115,6 +130,17 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.header a:hover {
+  text-decoration: underline;
 }
 
 .background {

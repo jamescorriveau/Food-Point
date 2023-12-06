@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import RestaurantList from "./Components/RestaurantList";
 import RestaurantSearch from "./Components/RestaurantSearch";
@@ -15,7 +15,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "3a907745f5msh22b6f4061fe0039p156641jsn530f785f876f",
+        "X-RapidAPI-Key": "25cd163a55msh8de58ba6d3cc121p11303djsn2749a2d3743f",
         "X-RapidAPI-Host": "maps-data.p.rapidapi.com",
       },
     };
@@ -26,7 +26,7 @@ function App() {
       if (res.status === 200) {
         res.json().then((data) => {
           setResults(data.data);
-          console.log(results)
+          console.log(results);
         });
       } else {
         res.json().then((err) => setErrors(err));
@@ -34,20 +34,19 @@ function App() {
     });
   }, []);
 
-function onSearch(term) {
-  setSearchTerm(term);
-}
+  const onSearch = (term) => {
+    setSearchTerm(term);
+  };
 
-
-const filteredResults = results.filter((result) =>  result.name.toLowerCase().includes(searchTerm.toLowerCase()));
-
+  const filteredResults = results.filter((result) =>
+    result.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="background">
-      <Header />
-      <RestaurantSearch restaurants={filteredResults} onSearch={onSearch} searchTerm={searchTerm}/>
+      <Header searchTerm={searchTerm} onSearch={onSearch} />
       {results.length > 0 ? (
-        <RestaurantList results={filteredResults}/>
+        <RestaurantList results={filteredResults} />
       ) : (
         <p>Loading...</p>
       )}
