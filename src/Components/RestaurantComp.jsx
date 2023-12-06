@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useFavorites } from './FavoritesContext';
 
 function RestaurantComp({ name, description, address, city, rating, review_count, open_state, types, hours, website, price_level, photos, restaurants, url }) {
+
+  const { addToFavorites } = useFavorites();
+
   const [isShowingHours, setShowingHours] = useState(false);
   const [isFavorite, setFavorite] = useState(false);
   const [favoritesList, setFavoritesList] = useState([]);
@@ -10,12 +14,12 @@ function RestaurantComp({ name, description, address, city, rating, review_count
     console.log(favoritesList);
   }, [favoritesList]);
 
-  function handleShowHours() {
-    setShowingHours(!isShowingHours);
-  }
+  // function handleShowHours() {
+  //   setShowingHours(!isShowingHours);
+  // }
 
   function handleFavoriteTrue() {
-    handleFavorite() 
+    // handleFavorite() 
 
     const favoriteRestaurant = {
             name,
@@ -35,8 +39,8 @@ function RestaurantComp({ name, description, address, city, rating, review_count
           console.log('favorite restaurant!')
           console.log(favoriteRestaurant)
     
-      addToFaves(favoriteRestaurant);
-  }``
+      addToFavorites(favoriteRestaurant);
+  }
 
   function handleFavorite() {
     setFavorite(!isFavorite)

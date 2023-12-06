@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useFavorites } from './FavoritesContext';
 
 function Profile() {
+    
 
-    return(
-        <div>
-            
-        </div>
-    ) 
+  return (
+    <div>
+      <h2>Saved Restaurants</h2>
+      
+    </div>
+  );
 }
 
 export default Profile;

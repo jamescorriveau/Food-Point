@@ -22,6 +22,7 @@ const routes = createBrowserRouter([
         element: <RestaurantList />,
       },
       {
+        //? why does this also render the regular restaurant list
         path: "/profile",
         element: <Profile />,
       },

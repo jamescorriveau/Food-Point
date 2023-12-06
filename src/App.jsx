@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import RestaurantList from "./Components/RestaurantList";
 import RestaurantSearch from "./Components/RestaurantSearch";
+import { FavoritesProvider } from './Components/FavoritesContext';
 import Header from "./Header";
 
 function App() {
@@ -27,7 +28,6 @@ function App() {
       if (res.status === 200) {
         res.json().then((data) => {
           setResults(data.data);
-          console.log(results)
         });
       } else {
         res.json().then((err) => setErrors(err));
@@ -56,15 +56,17 @@ const filteredResults = results.filter((result) => {
 
 
   return (
-    <div className="background">
-      <Header />
-      <RestaurantSearch restaurants={filteredResults} onSearch={onSearch} searchTerm={searchTerm}/>
-      {results.length > 0 ? (
-        <RestaurantList results={filteredResults} url={url}/>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <FavoritesProvider>
+      <div className="background">
+        <Header />
+        <RestaurantSearch restaurants={filteredResults} onSearch={onSearch} searchTerm={searchTerm}/>
+        {results.length > 0 ? (
+          <RestaurantList results={filteredResults} url={url}/>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    </FavoritesProvider>
   );
 }
 
