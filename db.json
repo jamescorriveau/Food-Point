@@ -1,3 +1,149 @@
 {
-  "favoriteRestaurants": []
+  "favoriteRestaurants": [
+    {
+      "name": "George's",
+      "description": [
+        "Longtime staple for breakfast & more",
+        "Basic staple since 1950 for breakfast (omelets, pancakes & the like) & other short-order fare."
+      ],
+      "city": "New York, NY",
+      "rating": 4.3,
+      "review_count": 2759,
+      "open_state": "Open ⋅ Closes 6 PM",
+      "types": [
+        "American restaurant",
+        "Breakfast restaurant",
+        "Diner",
+        "European restaurant",
+        "Mediterranean restaurant"
+      ],
+      "hours": {
+        "Thursday": [
+          "7 AM–6 PM"
+        ],
+        "Friday": [
+          "7 AM–6 PM"
+        ],
+        "Saturday": [
+          "7 AM–6 PM"
+        ],
+        "Sunday": [
+          "7 AM–6 PM"
+        ],
+        "Monday": [
+          "7 AM–6 PM"
+        ],
+        "Tuesday": [
+          "7 AM–6 PM"
+        ],
+        "Wednesday": [
+          "7 AM–6 PM"
+        ]
+      },
+      "website": "georges-ny.com",
+      "price_level": "$$",
+      "photos": [
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipOv4K7mX8Nj8D0jqqlyGjuBjh4EOJFjNPWgsbpU=w203-h152-k-no",
+          "max_size": [
+            4032,
+            3024
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipMV4zKNqqPMrCPZV0ik8XG26uxsN13MF5_zbgtR=w203-h135-k-no",
+          "max_size": [
+            2048,
+            1366
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipO_RlipFyvNFj5Hb6sOUekqg9xgxn9IUm6Lo4ro=w205-h100-k-no",
+          "max_size": [
+            4032,
+            1960
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipNHCxVvOTXwtxdiQ-LBVH8Cxq8OHmE5_4EzST7x=w203-h270-k-no",
+          "max_size": [
+            1536,
+            2048
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipOiAmRJUWL2Sykedj85HArnG8Xp195KlKMlDTfR=w203-h152-k-no",
+          "max_size": [
+            4032,
+            3024
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPcs_SRWNK9quJJBp5w6hC_45ABwYhgXJkJRcgV=w203-h270-k-no",
+          "max_size": [
+            3024,
+            4032
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPkI2g7MGh36baqeQW2Hr6wHjif5sKK1FLUC5wL=w203-h152-k-no",
+          "max_size": [
+            4624,
+            3468
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPShdmTfobI2pqjG797G2MzXVbtpQVEa2LJkLr9=w203-h152-k-no",
+          "max_size": [
+            4032,
+            3024
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPPhrKesU6rlnTFWQsZ9KVfJzv9UtpkqvbPVhTj=w203-h152-k-no",
+          "max_size": [
+            4000,
+            3000
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        }
+      ],
+      "id": 1
+    }
+  ]
 }

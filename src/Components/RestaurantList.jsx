@@ -4,11 +4,13 @@ import RestaurantComp from "./RestaurantComp";
 function RestaurantList({ results, filteredResults }) {
   let restaurants;
 
+  console.log("logging restaurants")
   console.log(results);
 
   restaurants = results.map((result) => (
     <RestaurantComp
-      key={result.business_id}
+    id={result.key}  
+    key={result.business_id}
       name={result.name}
       description={result.description}
       address={result.address}

@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import RestaurantList from "./Components/RestaurantList";
-import Header from "./Header";
+import RestaurantSearch from "./Components/RestaurantSearch";
+
+import { useOutletContext } from "react-router-dom";
 
 function App() {
+  const searchTerm = useOutletContext();
+
+  console.log(searchTerm);
+
   let [results, setResults] = useState([]);
   const [errors, setErrors] = useState({});
-  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const url =
@@ -14,7 +19,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "25cd163a55msh8de58ba6d3cc121p11303djsn2749a2d3743f",
+        "X-RapidAPI-Key": "4578ad90c0msh7185e76eb4a1d1ap1676a0jsn80fa8c573e3d",
         "X-RapidAPI-Host": "maps-data.p.rapidapi.com",
       },
     };
@@ -33,17 +38,12 @@ function App() {
     });
   }, []);
 
-  const onSearch = (term) => {
-    setSearchTerm(term);
-  };
-
   const filteredResults = results.filter((result) =>
     result.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="background">
-      <Header searchTerm={searchTerm} onSearch={onSearch} />
       {results.length > 0 ? (
         <RestaurantList results={filteredResults} />
       ) : (
