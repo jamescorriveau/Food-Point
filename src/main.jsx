@@ -10,16 +10,17 @@ import Profile from "./Components/Profile.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RestaurantList from "./Components/RestaurantList.jsx";
+import Layout from "./Components/Layout.jsx";
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Layout />,
     errorElement: <h1>Somthing went wrong!</h1>,
     children: [
       {
         path: "/",
-        element: <RestaurantList />,
+        element: <App />,
       },
       {
         path: "/profile",

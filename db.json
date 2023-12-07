@@ -1,80 +1,50 @@
 {
   "favoriteRestaurants": [
     {
-      "name": "O'Hara's Restaurant and Pub",
+      "name": "George's",
       "description": [
-        "Classic Irish pub near 9-11 Memorial",
-        "Both locals & visitors come for cold pints plus burgers, wings & bar food in a neighborhood spot."
+        "Longtime staple for breakfast & more",
+        "Basic staple since 1950 for breakfast (omelets, pancakes & the like) & other short-order fare."
       ],
       "city": "New York, NY",
-      "rating": 4.6,
-      "review_count": 4527,
-      "open_state": "Open ⋅ Closes 1 AM",
+      "rating": 4.3,
+      "review_count": 2759,
+      "open_state": "Open ⋅ Closes 6 PM",
       "types": [
         "American restaurant",
-        "Bar"
+        "Breakfast restaurant",
+        "Diner",
+        "European restaurant",
+        "Mediterranean restaurant"
       ],
       "hours": {
-        "Wednesday": [
-          "11 AM–1 AM"
-        ],
         "Thursday": [
-          "11 AM–1 AM"
+          "7 AM–6 PM"
         ],
         "Friday": [
-          "11 AM–1 AM"
+          "7 AM–6 PM"
         ],
         "Saturday": [
-          "11 AM–1 AM"
+          "7 AM–6 PM"
         ],
         "Sunday": [
-          "12 PM–12 AM"
+          "7 AM–6 PM"
         ],
         "Monday": [
-          "11 AM–1 AM"
+          "7 AM–6 PM"
         ],
         "Tuesday": [
-          "11 AM–1 AM"
+          "7 AM–6 PM"
+        ],
+        "Wednesday": [
+          "7 AM–6 PM"
         ]
       },
-      "website": "facebook.com",
+      "website": "georges-ny.com",
       "price_level": "$$",
       "photos": [
         {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipMdOwNgxdM8jWbEy1N2UqZSQ5KTloYbOAaIPM1Q=w203-h152-k-no",
-          "max_size": [
-            4048,
-            3036
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipOrIafTgBOB6tsvlHLZtkAcYuucSbhzMgfRtNoN=w203-h152-k-no",
-          "max_size": [
-            8000,
-            6000
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipOAfbvCZM29MfWaMy-UPGmTzjwkFDdRILePv7QM=w203-h114-k-no",
-          "max_size": [
-            4032,
-            2268
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipPXeVZr0hYaeRX3bNl9qo9uuS0mGGm3KogjB8rR=w203-h152-k-no",
+          "src": "https://lh5.googleusercontent.com/p/AF1QipOv4K7mX8Nj8D0jqqlyGjuBjh4EOJFjNPWgsbpU=w203-h152-k-no",
           "max_size": [
             4032,
             3024
@@ -85,10 +55,10 @@
           ]
         },
         {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipN9vBIcY81VHyScYO0oBuvXeKoEBwJJkONayU9H=w203-h114-k-no",
+          "src": "https://lh5.googleusercontent.com/p/AF1QipMV4zKNqqPMrCPZV0ik8XG26uxsN13MF5_zbgtR=w203-h135-k-no",
           "max_size": [
-            4608,
-            2592
+            2048,
+            1366
           ],
           "min_size": [
             203,
@@ -96,10 +66,10 @@
           ]
         },
         {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipOtf_LwU2vZ-DtBU4I3RWb_dedgG8QqxCV_vTEd=w203-h270-k-no",
+          "src": "https://lh5.googleusercontent.com/p/AF1QipO_RlipFyvNFj5Hb6sOUekqg9xgxn9IUm6Lo4ro=w205-h100-k-no",
           "max_size": [
-            3000,
-            4000
+            4032,
+            1960
           ],
           "min_size": [
             203,
@@ -107,10 +77,10 @@
           ]
         },
         {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipNDP9HKHfF3vM6B7OCrBccRDCcrzfk-31NhF7I=w203-h152-k-no",
+          "src": "https://lh5.googleusercontent.com/p/AF1QipNHCxVvOTXwtxdiQ-LBVH8Cxq8OHmE5_4EzST7x=w203-h270-k-no",
           "max_size": [
-            4080,
-            3072
+            1536,
+            2048
           ],
           "min_size": [
             203,
@@ -118,10 +88,10 @@
           ]
         },
         {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipNlAbJCHNkwTOpdP0WW21qAFKIHgBfWuOyyVBmB=w203-h152-k-no",
+          "src": "https://lh5.googleusercontent.com/p/AF1QipOiAmRJUWL2Sykedj85HArnG8Xp195KlKMlDTfR=w203-h152-k-no",
           "max_size": [
-            4080,
-            3072
+            4032,
+            3024
           ],
           "min_size": [
             203,
@@ -129,147 +99,7 @@
           ]
         },
         {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipM7kp90YCSYuFmrFt7i_h-1fFuM3tWQ5cGGBb_c=w203-h152-k-no",
-          "max_size": [
-            2818,
-            2113
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        }
-      ],
-      "id": 1
-    },
-    {
-      "name": "Trinity Place",
-      "description": [
-        "American fare in a converted bank vault",
-        "American eatery set in a converted bank vault with original vault doors dating to 1904."
-      ],
-      "city": "New York, NY",
-      "rating": 4.4,
-      "review_count": 1286,
-      "open_state": "Open ⋅ Closes 12 AM",
-      "types": [
-        "American restaurant",
-        "Bar",
-        "Bar & grill",
-        "Cocktail bar",
-        "Dessert restaurant",
-        "Irish pub",
-        "Pub"
-      ],
-      "hours": {
-        "Wednesday": [
-          "12:30–1 AM",
-          "11:30 AM–12 AM"
-        ],
-        "Thursday": [
-          "12:30–1 AM",
-          "11:30 AM–12 AM"
-        ],
-        "Friday": [
-          "12:30–1 AM",
-          "11:30 AM–12 AM"
-        ],
-        "Saturday": [
-          "Closed"
-        ],
-        "Sunday": [
-          "Closed"
-        ],
-        "Monday": [
-          "11:30 AM–12 AM"
-        ],
-        "Tuesday": [
-          "12:30–1 AM",
-          "11:30 AM–12 AM"
-        ]
-      },
-      "website": "trinityplacenyc.com",
-      "price_level": "$$",
-      "photos": [
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipPkmamODWwmWnZESo6AiuDsSkkhgeOdJ4VTgGxS=w203-h135-k-no",
-          "max_size": [
-            5184,
-            3456
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipMiX-ogriqVR8SCYO3U2jecGoQ_Hhq2I9gz_RwI=w203-h135-k-no",
-          "max_size": [
-            2819,
-            1879
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipO2ZnMYLEPkGDhWjJSa6ELZV1ZqYr7ZRZtM69f-=w203-h135-k-no",
-          "max_size": [
-            2604,
-            1736
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipMLMMzOUR_SuGgqGenU_n2uQF_gTdBKUeJnLIhr=w203-h152-k-no",
-          "max_size": [
-            4000,
-            3000
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipM_7YHtGTPNA0QJh-nbphaFZVN4HOPQYd7iKiDG=w203-h152-k-no",
-          "max_size": [
-            4624,
-            3468
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipO3z42vFgJrEpfw38Z5Q2fCa_AAcq6AP1KQbHDg=w203-h270-k-no",
-          "max_size": [
-            2811,
-            3744
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipNOJIG9-H1EhaxOJWnytyO-bCQt0qYEqOZ669o9=w203-h152-k-no",
-          "max_size": [
-            4000,
-            3000
-          ],
-          "min_size": [
-            203,
-            100
-          ]
-        },
-        {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipOeq1lnV56b7_RZUfClkATKsFZtDBCrKnIiZ6xl=w203-h270-k-no",
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPcs_SRWNK9quJJBp5w6hC_45ABwYhgXJkJRcgV=w203-h270-k-no",
           "max_size": [
             3024,
             4032
@@ -280,10 +110,32 @@
           ]
         },
         {
-          "src": "https://lh5.googleusercontent.com/p/AF1QipPSqFMsaEbPgTc2q_J-TK0JZDFSZ1l1gDTrk8Ri=w203-h152-k-no",
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPkI2g7MGh36baqeQW2Hr6wHjif5sKK1FLUC5wL=w203-h152-k-no",
           "max_size": [
-            4080,
-            3072
+            4624,
+            3468
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPShdmTfobI2pqjG797G2MzXVbtpQVEa2LJkLr9=w203-h152-k-no",
+          "max_size": [
+            4032,
+            3024
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipPPhrKesU6rlnTFWQsZ9KVfJzv9UtpkqvbPVhTj=w203-h152-k-no",
+          "max_size": [
+            4000,
+            3000
           ],
           "min_size": [
             203,
@@ -291,7 +143,7 @@
           ]
         }
       ],
-      "id": 2
+      "id": 1
     }
   ]
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function RestaurantComp({
+  id,
   name,
   description,
   address,
@@ -16,7 +17,8 @@ function RestaurantComp({
 }) {
 
   const restaurant = {
-    name,
+  id,
+  name,
   description,
   address,
   city,
@@ -59,12 +61,41 @@ function RestaurantComp({
   .then(data => {
     // Handle the response data as needed
     console.log('Response:', data);
+    //think about state here 
   })
   .catch(error => {
     // Handle errors during the fetch request
     console.error('Error:', error);
   });
 
+  }
+
+  
+  function handleUnfavorite() {
+    
+    setFavorite(!isFavorite);
+
+    fetch(`http://localhost:3000/favoriteRestaurants/${id}`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(restaurant),
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json(); // Assuming the server returns JSON data
+  })
+  .then(data => {
+    // Handle the response data as needed
+    console.log('Response:', data);
+  })
+  .catch(error => {
+    // Handle errors during the fetch request
+    console.error('Error:', error);
+  });
 
   }
 
@@ -160,8 +191,7 @@ function RestaurantComp({
             {isFavorite ? (
               <button onClick={handleFavorite}>Add to Favorites ☆</button>
             ) : (
-              <button
-                
+              <button onClick={handleUnfavorite}
                 style={{ backgroundColor: "#b2ebc1" }}
               >
                 Added to Favorites ★

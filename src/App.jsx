@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import RestaurantList from "./Components/RestaurantList";
 import RestaurantSearch from "./Components/RestaurantSearch";
-import Header from "./Header";
+
+import { useOutletContext } from "react-router-dom";
 
 function App() {
+
+  const searchTerm = useOutletContext()
+
+  console.log(searchTerm)
+
   let [results, setResults] = useState([]);
   const [errors, setErrors] = useState({});
-  const [searchTerm, setSearchTerm] = useState("");
+  
 
   useEffect(() => {
     const url =
@@ -34,9 +40,7 @@ function App() {
     });
   }, []);
 
-  const onSearch = (term) => {
-    setSearchTerm(term);
-  };
+ 
 
   const filteredResults = results.filter((result) =>
     result.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -44,7 +48,7 @@ function App() {
 
   return (
     <div className="background">
-      <Header searchTerm={searchTerm} onSearch={onSearch} />
+      
       {results.length > 0 ? (
         <RestaurantList results={filteredResults} />
       ) : (
