@@ -437,6 +437,154 @@
           ]
         }
       ]
+    },
+    {
+      "id": "0x89c25a1b9dcb2951:0x941abc2ae2371bbf",
+      "name": "El Vez and Burrito Bar",
+      "description": [
+        "Splashy Mexican restaurant & bar",
+        "Modern takes on Mexican favorites served in a flashy space with vibrant colors & a lively bar."
+      ],
+      "city": "New York, NY",
+      "rating": 4.3,
+      "review_count": 2458,
+      "open_state": "Open ⋅ Closes 10 PM",
+      "types": [
+        "Mexican restaurant",
+        "Brunch restaurant",
+        "Cocktail bar",
+        "Lunch restaurant",
+        "Takeout Restaurant",
+        "Restaurant",
+        "Spanish restaurant",
+        "Taco restaurant"
+      ],
+      "hours": {
+        "Thursday": [
+          "11:30 AM–10 PM"
+        ],
+        "Friday": [
+          "11:30 AM–11 PM"
+        ],
+        "Saturday": [
+          "11 AM–11 PM"
+        ],
+        "Sunday": [
+          "11 AM–10 PM"
+        ],
+        "Monday": [
+          "11:30 AM–10 PM"
+        ],
+        "Tuesday": [
+          "11:30 AM–10 PM"
+        ],
+        "Wednesday": [
+          "11:30 AM–10 PM"
+        ]
+      },
+      "website": "elveznyc.com",
+      "price_level": "$$",
+      "photos": [
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipOY1WqSQYAqzHnOkTOWVJRYVKYc0xFeM90wT_xz=w203-h135-k-no",
+          "max_size": [
+            5477,
+            3651
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipNtmlzJc3KGHzJHbsKLEHDuxJX4qFFMEh_Ln_yV=w203-h135-k-no",
+          "max_size": [
+            3521,
+            2347
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/gps-proxy/AFm_dcTyekPzIqrlIGbgvyD6HYoFAjIK2-9ATqgH33H2gEqw6bvhCACKxN2EFvftbp5ywJebqyog6l35rQFX0Iy09x-QaCjBFN07noTGjlOaQq4D9j2thZTPw8Az8wvOB6bZ82mzUJgqgtV8ClBZbC7W-_FqLFl1V61FkAnUgDzHs_ARvrfrIAffOMo=w203-h114-k-no",
+          "max_size": [
+            1194,
+            672
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipO5bU4Zfw-yjJOpSB4Z39biP0OC47GAIBLiudzn=w203-h152-k-no",
+          "max_size": [
+            4032,
+            3024
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipNxGl_074jZuaVWQMvikPxwf5JG7XIzAC2q4dcD=w203-h270-k-no",
+          "max_size": [
+            3024,
+            4032
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipOwG7cmB2sf1ymVcv2L4qPW3GHVFGW1hDmgLtim=w203-h152-k-no",
+          "max_size": [
+            4000,
+            3000
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/gps-proxy/AFm_dcS8WI9nDPlu-TnbeS0wvElNaZtuYnwQgbSInkS_GzHdFraDGh00mVoUuLQ87tUPbCHbv51A52pRf7feaQ58gdQi_5Q_xk_AjiofJv8f_KVK1IRYg410QxnNUJipO-6vxVvlenpw4gV9209wUlpsMd2oP4VnFxLYJD9ezdDfWdzfKDKH6l1LVb4=w203-h114-k-no",
+          "max_size": [
+            1194,
+            672
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh5.googleusercontent.com/p/AF1QipNQl5X8vQAIqMsNjiE3l_P3mNucb5unYBsVHXZq=w203-h270-k-no",
+          "max_size": [
+            3024,
+            4032
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/gps-proxy/AFm_dcRIbOiOoYvLDF8vShWJ9EmLlYlNbAXXtOWiJTUWrh6OoMoxFvKzWNq5QmcnaGcfk9v59rbsnuTQ42UpVnc_J8os162TWcowuwospjgyVdXIUjXb7EtrgXe17W3ianC2js4GcJLDT0yC6F-S75MPoN68cq6r_jQooEWUZhzoUxwEFRlYulLg7leI1Q=w203-h114-k-no",
+          "max_size": [
+            1194,
+            672
+          ],
+          "min_size": [
+            203,
+            100
+          ]
+        }
+      ]
     }
   ]
 }
