@@ -43,32 +43,48 @@ function RestaurantComp({
 
 
   function handleFavorite() {
+    // Invert the favorite state locally
     setFavorite(!isFavorite);
-
-    fetch('http://localhost:3000/favoriteRestaurants', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(restaurant),
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json(); // Assuming the server returns JSON data
-  })
-  .then(data => {
-    // Handle the response data as needed
-    console.log('Response:', data);
-    //think about state here 
-  })
-  .catch(error => {
-    // Handle errors during the fetch request
-    console.error('Error:', error);
-  });
-
+  
+    // Fetch the current list of favorite restaurants from the server
+    fetch('http://localhost:3000/favoriteRestaurants')
+      .then(response => response.json())
+      .then(existingFavorites => {
+        // Check if the restaurant already exists in the favorites
+        const isAlreadyFavorite = existingFavorites.some(
+          favorite => favorite.name === restaurant.name
+        );
+  
+        // If the restaurant is not already a favorite, add it to the server
+        if (!isAlreadyFavorite) {
+          fetch('http://localhost:3000/favoriteRestaurants', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(restaurant),
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log('Response:', data);
+              // Handle the response data as needed
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching favorites:', error);
+      });
   }
+  
+
 
   
   function handleUnfavorite() {
@@ -200,7 +216,7 @@ function RestaurantComp({
           </div>
         </div>
 
-        {/* {isShowingHours ? <div onClick={handleShowHours}><strong>Hours ▲</strong></div>
+        {isShowingHours ? <div onClick={handleShowHours}><strong>Hours ▲</strong></div>
         : <div onClick={handleShowHours}><strong>Hours ▼</strong></div>
         }
 
@@ -214,7 +230,7 @@ function RestaurantComp({
             <div><strong>Sunday:</strong> {hours.Sunday[0]}</div>
             
         </div> : null
-        } */}
+        }
 
         <h4 className="description">{description[0]}</h4>
         {/* <div className="description">

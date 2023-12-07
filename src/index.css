@@ -1,59 +1,173 @@
 body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  font-family: "Arial", sans-serif;
+  color: red;
+  margin: 0; /* Reset default body margin */
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+.background {
+  background-image: url("https://images.pexels.com/photos/175753/pexels-photo-175753.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.restaurantContainer {
+  padding: 0 5%;
+}
+
+.restaurantCard {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: white;
+}
+
+.restaurantCard:hover {
+  transform: scale(1.05);
+}
+
+.name,
+.description {
+  padding: 0px;
+  margin: 0px;
+}
+
+.rating,
+#open,
+#price {
+  font-weight: bold;
+  margin-right: 10px; /* Add space between elements */
+}
+
+.infoRow {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if the content doesn't fit in one row */
+  justify-content: space-evenly;
+}
+
+#open {
+  font-weight: bold;
+}
+
+#hours {
+  margin-top: 10px;
+}
+
+#hours div {
+  margin-bottom: 5px;
+}
+
+#price {
+  font-weight: bold;
+}
+
+.description {
+  font-size: 14px;
+}
+
+strong {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+strong:hover {
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 163, 222);
+  text-align: center;
+  padding: 10px 20px;
+  height: auto;
+  font-weight: bold;
+}
+
+.foodPointerTitle {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 3px rgba(0, 161, 219));
+}
+
+.logo-title-container {
+  display: flex; /* Enables Flexbox */
+  align-items: center; /* Vertically centers the items */
+  /* gap: 10px; */
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.navLinks a {
+  color: white;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.navLinks a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 4%;
+}
+
+.search-restaurant {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  background: white;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: 1em;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.header a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.background {
+  background-image: url("https://images.pexels.com/photos/175753/pexels-photo-175753.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: auto;
+  min-height: 100vh;
+  min-width: 100vw;
 }
