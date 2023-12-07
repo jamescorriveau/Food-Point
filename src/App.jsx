@@ -19,7 +19,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "4578ad90c0msh7185e76eb4a1d1ap1676a0jsn80fa8c573e3d",
+        "X-RapidAPI-Key": "25cd163a55msh8de58ba6d3cc121p11303djsn2749a2d3743f",
         "X-RapidAPI-Host": "maps-data.p.rapidapi.com",
       },
     };

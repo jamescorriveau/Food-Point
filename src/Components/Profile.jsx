@@ -1,46 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+// import "./App.css";
 
 function Profile() {
   const [favorites, setFavorites] = useState([]);
-  const [newFavorite, setNewFavorite] = useState("");
   const [showFavorites, setShowFavorites] = useState(false);
 
-  const addFavorite = (e) => {
-    e.preventDefault();
-    if (newFavorite && !favorites.includes(newFavorite)) {
-      setFavorites([...favorites, newFavorite]);
-      setNewFavorite(""); // Reset input field after adding
-    }
-  };
+  useEffect(() => {
+    fetch("http://localhost:3000/favoriteRestaurants")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setFavorites(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching favorite restaurants:", error);
+      });
+  }, []);
 
   const toggleFavorites = () => {
     setShowFavorites(!showFavorites);
   };
 
-  // Function to render favorite restaurants
   const renderFavorites = () => {
     return favorites.map((restaurant, index) => (
-      <li key={index}>{restaurant}</li>
+      <li key={index}>{restaurant.name}</li>
     ));
   };
 
   return (
     <div>
       <h4>My Favorite Restaurants</h4>
-      <form onSubmit={addFavorite}>
-        <input
-          type="text"
-          value={newFavorite}
-          onChange={(e) => setNewFavorite(e.target.value)}
-          placeholder="Add a favorite restaurant"
-        />
-        <button type="submit">Add</button>
-      </form>
-
       <button onClick={toggleFavorites}>
         {showFavorites ? "Hide Favorites" : "Show Favorites"}
       </button>
-
       {showFavorites && <ul>{renderFavorites()}</ul>}
     </div>
   );
