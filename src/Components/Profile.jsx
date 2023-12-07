@@ -9,7 +9,7 @@ function Profile() {
     e.preventDefault();
     if (newFavorite && !favorites.includes(newFavorite)) {
       setFavorites([...favorites, newFavorite]);
-      setNewFavorite("");
+      setNewFavorite(""); // Reset input field after adding
     }
   };
 
@@ -17,6 +17,7 @@ function Profile() {
     setShowFavorites(!showFavorites);
   };
 
+  // Function to render favorite restaurants
   const renderFavorites = () => {
     return favorites.map((restaurant, index) => (
       <li key={index}>{restaurant}</li>

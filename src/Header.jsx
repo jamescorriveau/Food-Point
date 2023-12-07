@@ -8,11 +8,14 @@ const Header = ({ searchTerm, onSearch }) => {
 
   return (
     <header className="header">
-      <h2>Food Pointer</h2>
-      {/* <img
-        src="https://www.logoground.com/uploadthumbs12/dv12y2023645402023-07-043498290rooster4.jpg"
-        alt="Restaurant Finder"
-      /> */}
+      <div className="logo-title-container">
+        <img
+          src="https://logodix.com/logo/1195872.png"
+          alt="Food Pointer Logo"
+          className="logo"
+        />
+        <h2 className="foodPointerTitle">Food Point</h2>
+      </div>
       <div>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>

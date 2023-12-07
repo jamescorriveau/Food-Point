@@ -15,9 +15,7 @@ body {
 }
 
 .restaurantContainer {
-  /* margin-top: 5%; */
-  padding: 0 5%; /* Adjust padding for the desired buffer */
-  width: 100%;
+  padding: 0 5%;
 }
 
 .restaurantCard {
@@ -26,11 +24,8 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  margin-bottom: 2%; /* Add margin between cards */
-  width: calc(100% - 30px); /* Calculate width to consider padding and margin */
-
-  margin-left: auto; /* Center the card within the container */
-  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
   background-color: white;
 }
 
@@ -90,24 +85,41 @@ strong:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(141, 182, 197);
-  color: white;
+  background-color: rgb(0, 163, 222);
   text-align: center;
   padding: 10px 20px;
-  font-size: 1em;
   height: auto;
   font-weight: bold;
-  text-transform: uppercase;
+}
+
+.foodPointerTitle {
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 3px rgba(0, 161, 219));
+}
+
+.logo-title-container {
+  display: flex; /* Enables Flexbox */
+  align-items: center; /* Vertically centers the items */
+  /* gap: 10px; */
 }
 
 .navLinks {
   display: flex;
   align-items: center;
   text-decoration: none;
+  color: white;
 }
 
 .navLinks a {
-  text-decoration: none;
   color: white;
   margin: 0 10px;
   padding: 10px;
@@ -115,13 +127,14 @@ strong:hover {
 
 .navLinks a:hover {
   text-decoration: none;
-  font-weight: bold;
+  color: black;
 }
 
 .search-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 4%;
 }
 
 .search-restaurant {
@@ -130,11 +143,12 @@ strong:hover {
   border-radius: 5px;
   border: 1px solid #ccc;
   margin-right: 5px;
+  background: white;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #4caf50;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 5px;
@@ -147,10 +161,6 @@ button {
   color: white;
   margin: 0 10px;
   padding: 10px;
-}
-
-.header a:hover {
-  text-decoration: none;
 }
 
 .background {
