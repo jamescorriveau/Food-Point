@@ -8,9 +8,9 @@ function RestaurantList({ results, filteredResults }) {
   console.log(results);
 
   restaurants = results.map((result) => (
-    <RestaurantComp
-    id={result.key}  
+    <RestaurantComp 
     key={result.business_id}
+    busId={result.business_id}
       name={result.name}
       description={result.description}
       address={result.address}

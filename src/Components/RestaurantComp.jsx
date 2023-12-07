@@ -14,10 +14,11 @@ function RestaurantComp({
   website,
   price_level,
   photos,
+  busId
 }) {
 
   const restaurant = {
-  id,
+  id:busId,
   name,
   description,
   address,
@@ -118,12 +119,11 @@ function RestaurantComp({
           // If the restaurant is found in the list, send a DELETE request to remove it
           const encodedName = encodeURIComponent(restaurant.name); // Encode special characters
           console.log(`DELETE URL: http://localhost:3000/favoriteRestaurants/${deleteThisIndex}`);
-          fetch(`http://localhost:3000/favoriteRestaurants/${indexToRemove}`, {
+          fetch(`http://localhost:3000/favoriteRestaurants/${restaurant.id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(restaurant),
+            }
           })
             .then(response => {
               if (!response.ok) {
