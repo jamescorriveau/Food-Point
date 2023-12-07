@@ -24,17 +24,7 @@ const routes = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
-      },
-
-      // {
-      //   path: "/about",
-      //   element: <About />,
-      // },
-
-      // {
-      //   path: "/user/:id",
-      //   element: <UserDetails />,
-      // },
+      }
     ],
   },
 ]);

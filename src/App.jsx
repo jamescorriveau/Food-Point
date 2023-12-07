@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import RestaurantList from "./Components/RestaurantList";
-import RestaurantSearch from "./Components/RestaurantSearch";
+// import RestaurantSearch from "./Components/RestaurantSearch";
 
 import { useOutletContext } from "react-router-dom";
 
@@ -19,9 +19,9 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "4578ad90c0msh7185e76eb4a1d1ap1676a0jsn80fa8c573e3d",
-        "X-RapidAPI-Host": "maps-data.p.rapidapi.com",
-      },
+        'X-RapidAPI-Key': '4578ad90c0msh7185e76eb4a1d1ap1676a0jsn80fa8c573e3d',
+        'X-RapidAPI-Host': 'maps-data.p.rapidapi.com'
+      }
     };
 
     console.log("Fetching...");
