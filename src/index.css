@@ -1,4 +1,4 @@
-body{
+body {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,4 +56,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+}
