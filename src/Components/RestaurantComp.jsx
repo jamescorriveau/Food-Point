@@ -100,36 +100,53 @@ function RestaurantComp({
       });
   }
   
-
-
   
   function handleUnfavorite() {
-    
     setFavorite(!isFavorite);
-
-    fetch(`http://localhost:3000/favoriteRestaurants/${id}`, {
-      method: "DELETE",
-      headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(restaurant),
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json(); // Assuming the server returns JSON data
-  })
-  .then(data => {
-    // Handle the response data as needed
-    console.log('Response:', data);
-  })
-  .catch(error => {
-    // Handle errors during the fetch request
-    console.error('Error:', error);
-  });
-
+  
+    // Fetch the list of favorite restaurants when the component mounts
+    fetch('http://localhost:3000/favoriteRestaurants')
+      .then(response => response.json())
+      .then(existingFavorites => {
+        // Find the index of the current restaurant in the list of favorites
+        const indexToRemove = existingFavorites.findIndex(
+          favorite => favorite.name === restaurant.name
+        );
+  
+        if (indexToRemove !== -1) {
+          let deleteThisIndex = indexToRemove+1
+          // If the restaurant is found in the list, send a DELETE request to remove it
+          const encodedName = encodeURIComponent(restaurant.name); // Encode special characters
+          console.log(`DELETE URL: http://localhost:3000/favoriteRestaurants/${deleteThisIndex}`);
+          fetch(`http://localhost:3000/favoriteRestaurants/${indexToRemove}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(restaurant),
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              console.log('Response:', data);
+              // Handle the response data as needed
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching favorites:', error);
+      });
   }
+  
+  
+  
 
   const stars = [];
 
