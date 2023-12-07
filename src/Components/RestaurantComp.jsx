@@ -35,6 +35,22 @@ function RestaurantComp({
 
   const [isFavorite, setFavorite] = useState(true);
 
+  useEffect(() => {
+    // Fetch the list of favorite restaurants when the component mounts
+    fetch('http://localhost:3000/favoriteRestaurants')
+      .then(response => response.json())
+      .then(existingFavorites => {
+        // Check if the current restaurant is in the list of favorites
+        const isAlreadyFavorite = existingFavorites.some(
+          favorite => favorite.name === name
+        );
+        setFavorite(!isAlreadyFavorite); // Reverse the logic
+      })
+      .catch(error => {
+        console.error('Error fetching favorites:', error);
+      });
+  }, [name]);
+
   function handleShowHours() {
     setShowingHours(!isShowingHours);
   }
@@ -204,16 +220,14 @@ function RestaurantComp({
           </div>
           <div id="price">{money}</div>
           <div>
-            {isFavorite ? (
-              <button onClick={handleFavorite}>Add to Favorites ☆</button>
-            ) : (
-              <button onClick={handleUnfavorite}
-                style={{ backgroundColor: "#b2ebc1" }}
-              >
-                Added to Favorites ★
-              </button>
-            )}
-          </div>
+          {isFavorite ? (
+            <button onClick={handleFavorite}>Add to Favorites ☆</button>
+          ) : (
+            <button onClick={handleUnfavorite} style={{ backgroundColor: '#b2ebc1' }}>
+              Added to Favorites ★
+            </button>
+          )}
+        </div>
         </div>
 
         {isShowingHours ? <div onClick={handleShowHours}><strong>Hours ▲</strong></div>
