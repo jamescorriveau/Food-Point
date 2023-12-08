@@ -1,9 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
-const Header = ({ searchTerm, onSearch }) => {
+const Header = ({ searchTerm, onSearch}) => {
+  
   const handleChange = (e) => {
     onSearch(e.target.value);
+  };
+
+
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate("/");
   };
 
   return (
@@ -17,13 +25,16 @@ const Header = ({ searchTerm, onSearch }) => {
         <h2 className="foodPointerTitle">Food Point</h2>
       </div>
       <div>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" onClick={handleHomeClick}>
+          Home
+        </NavLink>
         <NavLink to="/profile">Profile</NavLink>
       </div>
+  
       <div className="search-container">
         <input
           type="search"
-          placeholder="Search here"
+          placeholder="Search below list"
           value={searchTerm}
           className="search-restaurant"
           onChange={handleChange}
