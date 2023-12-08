@@ -42,12 +42,15 @@ function Profile() {
     />
 
     
-  ));
-  console.log('restaurnats inside profile')
-    console.log(restaurants)
-
-    return <div key={favorites.business_id}>{restaurants}</div>;
+    ));
+    console.log("restaurnats inside profile");
+    console.log(restaurants);
   
-}
-
-export default Profile;
+    return (
+      <div className={`link-styles`} key={favorites.business_id}>
+        {restaurants}
+      </div>
+    );
+  }
+  
+  export default Profile;
